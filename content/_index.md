@@ -11,7 +11,7 @@ banner:
 
 featured_posts:
   enable: true
-  title: Featured Posts
+  title: GCHub Rising Stars
 
 promotion:
   enable: true
@@ -19,7 +19,7 @@ promotion:
   link: "#"
 
 recent_posts:
-  title: Recent Posts
+  title: GCHub Tips & Tricks
   enable: true
 
 ---

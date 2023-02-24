@@ -3,7 +3,7 @@ title: "Drone Software and Development"
 date: 2022-04-04T05:00:00Z
 image: /images/post/post-8.png
 categories: ["drone", "robotics"]
-featured: true
+featured: false
 draft: false
 ---
 
