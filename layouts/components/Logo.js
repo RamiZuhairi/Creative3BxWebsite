@@ -13,7 +13,7 @@ const Logo = ({ src }) => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <Link href="/" className="navbar-brand">
+    <Link href="/" className="navbar-brand ">
       {src || logo ? (
         <ImageFallback
           width={logo_width.replace("px", "") * 2}
@@ -25,11 +25,11 @@ const Logo = ({ src }) => {
           }
           alt={title}
           priority
-          style={{
-            height: logo_height.replace("px", "") + "px",
-            width: logo_width.replace("px", "") + "px",
-          }}
-          className={"m-auto rounded-full"}
+          // style={{
+          //   height: logo_height.replace("px", "") + "px",
+          //   width: logo_width.replace("px", "") + "px",
+          // }}
+          className={"m-auto lg:w-72 lg:h-20 md:w-72 md:h-16 w-44 h-14 "}
         />
       ) : logo_text ? (
         logo_text

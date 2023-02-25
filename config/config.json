@@ -3,8 +3,8 @@
     "title": "Girls Content Hub",
     "base_url": "/",
     "MetaLogo": "/images/MetaLogo1.png",
-    "logo": "/images/THHIconeBigForWhiteBG.gif", 
-    "logo_white": "/images/THHIconeBigForDarkBG.gif",
+    "logo": "/images/GCHIconeBigForWhiteBG.png", 
+    "logo_white": "/images/GCHIconeBigForDarkBG.png",
     "logo_width": "250",
     "logo_height": "70",
     "logo_text": "Girls Content Hub"
