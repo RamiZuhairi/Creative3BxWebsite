@@ -1,7 +1,7 @@
 ---
 title: "Shopping"
 draft: false
-
+layout: "shopping"
 ---
 
 

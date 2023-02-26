@@ -95,7 +95,9 @@ const Header = () => {
                       </ul>
                     </li>
                   ) : (
-                    <li className="nav-item">
+                    <li className="nav-item"
+                    onClick={() => setShowMenu(false)}
+                    >
                       <Link
                         href={menu.url}
                         className={`nav-link block ${

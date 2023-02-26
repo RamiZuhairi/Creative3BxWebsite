@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote";
 const About = ({ data }) => {
   const { frontmatter, mdxContent } = data;
   const { title, video, education, experience } = frontmatter;
-
+console.log("data About>>", data)
   return (
     <section className="section mt-16">
       <div className="container text-center">

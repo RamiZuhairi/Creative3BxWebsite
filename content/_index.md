@@ -20,6 +20,6 @@ promotion:
 
 recent_posts:
   title: GCHub Tips & Tricks
-  enable: true
+  enable: false
 
 ---

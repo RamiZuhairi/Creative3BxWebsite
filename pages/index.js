@@ -155,6 +155,7 @@ const Home = ({
                   </div>
                 </div>
               )}
+              <video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" controls/>
 
               <Pagination
                 totalPages={Math.ceil(posts.length / showPosts)}

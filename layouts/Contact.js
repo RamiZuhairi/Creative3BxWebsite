@@ -10,6 +10,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
 const Contact = ({ data }) => {
+  console.log("data Contact>>", data)
+
   const { frontmatter } = data;
   const { title,paragrph , form_action, phone, mail, location } = frontmatter;
   const form = useRef();
