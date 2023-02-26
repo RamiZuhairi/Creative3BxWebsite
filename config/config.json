@@ -2,7 +2,7 @@
   "site": {
     "title": "Girls Content Hub",
     "base_url": "/",
-    "MetaLogo": "/images/MetaLogo1.png",
+    "MetaLogo": "/images/MetaLogo.png",
     "logo": "/images/GCHIconeBigForWhiteBG.png", 
     "logo_white": "/images/GCHIconeBigForDarkBG.png",
     "logo_width": "250",
@@ -19,7 +19,7 @@
   "params": {
     "tag_manager_id": "",
     "footer_content": "Proudly ensuring employee happiness to build trust and share love ❤️",
-    "copyright": "Copyright © 2023 Girls Content Hub | All rights reserved | Designed with ❤️ by [Girls Content Hub] | Contact us: Apply@GirlsContentHub.com"
+    "copyright": "Copyright © 2023 Girls Content Hub | All rights reserved | Designed with ❤️ by [Girls Content Hub] | Contact us: Info@GirlsContentHub.com"
   },
   "metadata": {
     "meta_author": "Girls Content Hub team",
