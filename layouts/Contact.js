@@ -74,29 +74,30 @@ const Contact = ({ data }) => {
   };
 
   //Upload file UploadPicture
-  async function UploadPicture() {
-    const { value: file } = await Swal.fire({
-      title: "Select image",
-      input: "file",
-      inputAttributes: {
-        accept: "image/*",
-        "aria-label": "Upload your profile picture",
-      },
-    });
+  ////To uploading a photo be added later 
+  // async function UploadPicture() {
+  //   const { value: file } = await Swal.fire({
+  //     title: "Select image",
+  //     input: "file",
+  //     inputAttributes: {
+  //       accept: "image/*",
+  //       "aria-label": "Upload your profile picture",
+  //     },
+  //   });
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        Swal.fire({
-          title:
-            "<h3 style='color:#0e0e0e'>" + "Your uploaded picture" + "</h3>",
-          imageUrl: e.target.result,
-          imageAlt: "The uploaded picture",
-        });
-      };
-      reader.readAsDataURL(file);
-    }
-  }
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = (e) => {
+  //       Swal.fire({
+  //         title:
+  //           "<h3 style='color:#0e0e0e'>" + "Your uploaded picture" + "</h3>",
+  //         imageUrl: e.target.result,
+  //         imageAlt: "The uploaded picture",
+  //       });
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // }
 
   //Google Recapcha
   const onChange = () => {
@@ -441,20 +442,22 @@ const Contact = ({ data }) => {
                 <div>
                 <input
                   className="form-input w-full"
-                  name="from_subject"
+                  name="from_social" 
                   type="text"
                   placeholder=""
                   required
                 />
                 </div>
               </div>
+              {/* 
+              //To uploading a photo be added later 
               <div className="mb-6">
                 <button type="button" onClick={UploadPicture}>
                   Upload
                 </button>
                 <div>File uploaded</div>
                 <input type="file" />
-              </div>
+              </div> */}
               <div className="mb-6">
                 <label className="mb-2 block font-secondary" htmlFor="subject">
                   Subject
