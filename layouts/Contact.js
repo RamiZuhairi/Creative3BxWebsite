@@ -1,19 +1,33 @@
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
-import { FaEnvelope, FaMapMarkerAlt, FaUserAlt } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTiktok,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaUserAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import ImageFallback from "./components/ImageFallback";
 import React, { useRef } from "react";
+//import  useState from "react"
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Dropdown } from "@nextui-org/react";
 
-// import Swal from 'sweetalert2/dist/sweetalert2.js';
 const Contact = ({ data }) => {
-  console.log("data Contact>>", data)
+  const [selected, setSelected] = React.useState(new Set(["Facebook"]));
 
+  const selectedValue = React.useMemo(
+    () => Array.from(selected).join(", ").replaceAll("_", " "),
+    [selected]
+  );
   const { frontmatter } = data;
-  const { title,paragrph , form_action, phone, mail, location } = frontmatter;
+  const { title, paragrph, form_action, phone, mail, location } = frontmatter;
   const form = useRef();
   var GoogleCapcha = false;
   //Show Alert of successfull/ or failed
@@ -38,22 +52,26 @@ const Contact = ({ data }) => {
       text: "Something went wrong!",
       footer: '<a href="">Why do I have this issue?</a>',
     });
-    
   };
 
-  
-  const AlertGooglerecapcha =()=>{
+  const AlertGooglerecapcha = () => {
     Swal.fire({
-      title:  "<h3 style='color:#0e0e0e'>" + "Please click the "+" <span style='color:#ef4444'><br/>  I'm not a robot checkbox"+ "</span> <br/> "+"to submit the form." + "</h3>",
-      icon: 'warning',
+      title:
+        "<h3 style='color:#0e0e0e'>" +
+        "Please click the " +
+        " <span style='color:#ef4444'><br/>  I'm not a robot checkbox" +
+        "</span> <br/> " +
+        "to submit the form." +
+        "</h3>",
+      icon: "warning",
       showClass: {
-        popup: 'animate__animated animate__fadeInDown'
+        popup: "animate__animated animate__fadeInDown",
       },
       hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      }
-    })
-  }
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
+  };
 
   //Upload file UploadPicture
   async function UploadPicture() {
@@ -82,34 +100,33 @@ const Contact = ({ data }) => {
 
   //Google Recapcha
   const onChange = () => {
-     GoogleCapcha = true;
+    GoogleCapcha = true;
   };
 
   const sendEmail = (e) => {
-    if(GoogleCapcha){
-    e.preventDefault();
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-    emailjs
-      .sendForm(
-        "service_0ybp1pk",
-        "template_iagf9jh",
-        form.current,
-        "rQEQEUHnfqbKrneGy"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          AlertSuccess();
-          // reset the form after submit
-          e.target.reset();
-        },
-        (error) => {
-          AlertFail();
-          console.log(error.text);
-        }
-      );
-    }
-    else{
+    if (GoogleCapcha) {
+      e.preventDefault();
+      // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      emailjs
+        .sendForm(
+          "service_0ybp1pk",
+          "template_iagf9jh",
+          form.current,
+          "rQEQEUHnfqbKrneGy"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            AlertSuccess();
+            // reset the form after submit
+            e.target.reset();
+          },
+          (error) => {
+            AlertFail();
+            console.log(error.text);
+          }
+        );
+    } else {
       AlertGooglerecapcha();
       e.preventDefault();
     }
@@ -229,7 +246,6 @@ const Contact = ({ data }) => {
                         stroke="currentColor"
                         className="h-6 w-6"
                       >
-                       
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -353,6 +369,85 @@ const Contact = ({ data }) => {
                   required
                 />
               </div>
+
+              <div className="mb-8 flex items-center space-x-4">
+                <div>
+                <Dropdown>
+                  <Dropdown.Button
+                    flat
+                    color="secondary"
+                    css={{ tt: "capitalize" }}
+                  >
+                    {selectedValue}
+                  </Dropdown.Button>
+                  <Dropdown.Menu
+                    aria-label="Single selection actions"
+                    color="secondary"
+                    disallowEmptySelection
+                    selectionMode="single"
+                    selectedKeys={selected}
+                    onSelectionChange={setSelected}
+                    className="inline-block"
+                  >
+                    <Dropdown.Item key="Facebook">
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaFacebook />
+                        </div>{" "}
+                        <div>Facebook </div>
+                      </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Tiktok">
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaTiktok />
+                        </div>{" "}
+                        <div>Tiktok </div>
+                      </div>{" "}
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Instagram">
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaInstagram />
+                        </div>{" "}
+                        <div>Instagram </div>
+                      </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Twitter">
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaTwitter />
+                        </div>{" "}
+                        <div>Twitter </div>
+                      </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Youtube">
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaYoutube />
+                        </div>{" "}
+                        <div>Youtube </div>
+                      </div>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+             </div>
+                <div> Your {selected} name is: </div>
+                <div>
+                  <small className="font-secondary text-sm text-red-500">
+                    *
+                  </small>
+                </div>
+                <div>
+                <input
+                  className="form-input w-full"
+                  name="from_subject"
+                  type="text"
+                  placeholder=""
+                  required
+                />
+                </div>
+              </div>
               <div className="mb-6">
                 <button type="button" onClick={UploadPicture}>
                   Upload
@@ -410,9 +505,12 @@ const Contact = ({ data }) => {
                 />
               </div>
               <div className="mb-6 hover:cursor-pointer">
-                 <ReCAPTCHA sitekey="6LdwjnIkAAAAAON6qlbzYWN9fPew5-ChTSLTQFi8" onChange={onChange} />
+                <ReCAPTCHA
+                  sitekey="6LdwjnIkAAAAAON6qlbzYWN9fPew5-ChTSLTQFi8"
+                  onChange={onChange}
+                />
               </div>
-             
+
               <input className="btn btn-primary" type="submit" value="Send" />
             </form>
             {/* <input className="btn btn-primary" type="submit" value="Send" onClick={AlertSuccess} />

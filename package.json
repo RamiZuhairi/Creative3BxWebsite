@@ -7,12 +7,13 @@
   "scripts": {
     "dev": "node lib/jsonGenerator.js && next dev",
     "build": "node lib/jsonGenerator.js && next build",
-    "start": "next start", 
+    "start": "next start",
     "export": "next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@nextui-org/react": "^1.0.0-beta.12",
     "disqus-react": "^1.1.5",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
