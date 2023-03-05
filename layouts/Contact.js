@@ -103,7 +103,6 @@ const Contact = ({ data }) => {
   const onChange = () => {
     GoogleCapcha = true;
   };
-
   const sendEmail = (e) => {
     if (GoogleCapcha) {
       e.preventDefault();
@@ -370,7 +369,14 @@ const Contact = ({ data }) => {
                   required
                 />
               </div>
-
+              <div className="mb-8 flex space-x-2">
+              <div> Please share a social media account name </div>
+                <div>
+                  <small className="font-secondary text-sm text-red-500">
+                    *
+                  </small>
+                </div>
+                </div>
               <div className="mb-8 flex items-center space-x-4">
                 <div>
                 <Dropdown>
@@ -378,8 +384,15 @@ const Contact = ({ data }) => {
                     flat
                     color="secondary"
                     css={{ tt: "capitalize" }}
+                    
                   >
-                    {selectedValue}
+                    
+                  {selectedValue ==='Facebook'&& <div className="px-2"><FaFacebook/></div> }
+                  {selectedValue ==='Tiktok'&& <div className="px-2"> <FaTiktok/></div> } 
+                  {selectedValue ==='Instagram'&& <div className="px-2"> <FaInstagram/></div> } 
+                  {selectedValue ==='Twitter'&& <div className="px-2"> <FaTwitter/></div> } 
+                  {selectedValue ==='Youtube'&& <div className="px-2"> <FaYoutube/></div> } 
+                  {selectedValue}
                   </Dropdown.Button>
                   <Dropdown.Menu
                     aria-label="Single selection actions"
@@ -390,7 +403,7 @@ const Contact = ({ data }) => {
                     onSelectionChange={setSelected}
                     className="inline-block"
                   >
-                    <Dropdown.Item key="Facebook" name="from_Social">
+                    <Dropdown.Item key="Facebook">
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaFacebook />
@@ -398,7 +411,7 @@ const Contact = ({ data }) => {
                         <div>Facebook </div>
                       </div>
                     </Dropdown.Item>
-                    <Dropdown.Item key="Tiktok" name="from_Social">
+                    <Dropdown.Item key="Tiktok" >
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaTiktok />
@@ -406,7 +419,7 @@ const Contact = ({ data }) => {
                         <div>Tiktok </div>
                       </div>{" "}
                     </Dropdown.Item>
-                    <Dropdown.Item key="Instagram" name="from_Social">
+                    <Dropdown.Item key="Instagram" >
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaInstagram />
@@ -414,7 +427,7 @@ const Contact = ({ data }) => {
                         <div>Instagram </div>
                       </div>
                     </Dropdown.Item>
-                    <Dropdown.Item key="Twitter" name="from_Social">
+                    <Dropdown.Item key="Twitter" >
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaTwitter />
@@ -422,7 +435,7 @@ const Contact = ({ data }) => {
                         <div>Twitter </div>
                       </div>
                     </Dropdown.Item>
-                    <Dropdown.Item key="Youtube" name="from_Social">
+                    <Dropdown.Item key="Youtube" >
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaYoutube />
@@ -433,13 +446,16 @@ const Contact = ({ data }) => {
                   </Dropdown.Menu>
                 </Dropdown>
              </div>
-                <div> Your {selected} name is: </div>
                 <div>
-                  <small className="font-secondary text-sm text-red-500">
-                    *
-                  </small>
-                </div>
-                <div>
+                <input
+                  className="form-input w-full"
+                  name="from_SocialType" 
+                  type="text"
+                  value={selectedValue} 
+                  hidden='true'
+                  placeholder=""
+                  required
+                />
                 <input
                   className="form-input w-full"
                   name="from_SocialName" 

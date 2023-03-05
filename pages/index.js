@@ -157,6 +157,8 @@ const Home = ({
               )}
               <video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" controls/>
 
+              <video width="100%" className="rounded-lg" src="/images/postsImgs/GCH_NataliaLong.mp4" controls/>
+
               <Pagination
                 totalPages={Math.ceil(posts.length / showPosts)}
                 currentPage={1}
