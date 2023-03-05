@@ -74,7 +74,7 @@ const Contact = ({ data }) => {
   };
 
   //Upload file UploadPicture
-  ////To uploading a photo be added later
+  ////To uploading a photo be added later 
   // async function UploadPicture() {
   //   const { value: file } = await Swal.fire({
   //     title: "Select image",
@@ -294,199 +294,175 @@ const Contact = ({ data }) => {
                   Other
                 </div>
               </div>
-              <div className="mb-8 flex items-center space-x-4">
-                <div className="flex space-x-1">
-                  <label className="mb-2 block font-secondary" htmlFor="number">
-                    <div className="flex space-x-1">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="h-6 w-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm">Age</div>
-                      <div>
-                        <small className="font-secondary text-sm text-red-500">
-                          *
-                        </small>
-                      </div>
+              <div className="mb-6">
+                <label className="mb-2 block font-secondary" htmlFor="email">
+                  <div className="flex space-x-1">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="h-6 w-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                        />
+                      </svg>
                     </div>
-                  </label>
-                  <input
-                    className="form-input w-full"
-                    name="from_age"
-                    type="number"
-                    placeholder=""
-                    required
-                  />
-                </div>
-                <div className="flex space-x-1">
-                  <label className="mb-2 block font-secondary" htmlFor="number">
-                    <div className="flex space-x-1">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="h-6 w-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="text-sm">Country</div>
-                      <div>
-                        <small className="font-secondary text-sm text-red-500">
-                          *
-                        </small>
-                      </div>
+                    <div>Age</div>
+                    <div>
+                      <small className="font-secondary text-sm text-red-500">
+                        *
+                      </small>
                     </div>
-                  </label>
-                  <input
-                    className="form-input w-full"
-                    name="from_country"
-                    type="text"
-                    placeholder=""
-                    required
-                  />
-                </div>
+                  </div>
+                </label>
+                <input
+                  className="form-input w-full"
+                  name="from_age"
+                  type="number"
+                  placeholder=""
+                  required
+                />
+              </div>
+              <div className="mb-6">
+                <label className="mb-2 block font-secondary" htmlFor="name">
+                  <div className="flex space-x-1">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="h-6 w-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div>Country</div>
+                    <div>
+                      <small className="font-secondary text-sm text-red-500">
+                        *
+                      </small>
+                    </div>
+                  </div>
+                </label>
+                <input
+                  className="form-input w-full"
+                  name="from_country"
+                  type="text"
+                  placeholder=""
+                  required
+                />
               </div>
               <div className="mb-8 flex space-x-2">
-                <div> Please share a social media account name </div>
+              <div> Please share a social media account name </div>
                 <div>
                   <small className="font-secondary text-sm text-red-500">
                     *
                   </small>
                 </div>
-              </div>
+                </div>
               <div className="mb-8 flex items-center space-x-4">
                 <div>
-                  <Dropdown>
-                    <Dropdown.Button
-                      flat
-                      color="secondary"
-                      css={{ tt: "capitalize" }}
-                    >
-                      {selectedValue === "Facebook" && (
-                        <div className="px-2">
+                <Dropdown>
+                  <Dropdown.Button
+                    flat
+                    color="secondary"
+                    css={{ tt: "capitalize" }}
+                    
+                  >
+                    
+                  {selectedValue ==='Facebook'&& <div className="px-2"><FaFacebook/></div> }
+                  {selectedValue ==='Tiktok'&& <div className="px-2"> <FaTiktok/></div> } 
+                  {selectedValue ==='Instagram'&& <div className="px-2"> <FaInstagram/></div> } 
+                  {selectedValue ==='Twitter'&& <div className="px-2"> <FaTwitter/></div> } 
+                  {selectedValue ==='Youtube'&& <div className="px-2"> <FaYoutube/></div> } 
+                  {selectedValue}
+                  </Dropdown.Button>
+                  <Dropdown.Menu
+                    aria-label="Single selection actions"
+                    color="secondary"
+                    disallowEmptySelection
+                    selectionMode="single"
+                    selectedKeys={selected}
+                    onSelectionChange={setSelected}
+                    className="inline-block"
+                  >
+                    <Dropdown.Item key="Facebook">
+                      <div className="flex items-center space-x-4">
+                        <div>
                           <FaFacebook />
-                        </div>
-                      )}
-                      {selectedValue === "Tiktok" && (
-                        <div className="px-2">
-                          {" "}
-                          <FaTiktok />
-                        </div>
-                      )}
-                      {selectedValue === "Instagram" && (
-                        <div className="px-2">
-                          {" "}
-                          <FaInstagram />
-                        </div>
-                      )}
-                      {selectedValue === "Twitter" && (
-                        <div className="px-2">
-                          {" "}
-                          <FaTwitter />
-                        </div>
-                      )}
-                      {selectedValue === "Youtube" && (
-                        <div className="px-2">
-                          {" "}
-                          <FaYoutube />
-                        </div>
-                      )}
-                      {selectedValue}
-                    </Dropdown.Button>
-                    <Dropdown.Menu
-                      aria-label="Single selection actions"
-                      color="secondary"
-                      disallowEmptySelection
-                      selectionMode="single"
-                      selectedKeys={selected}
-                      onSelectionChange={setSelected}
-                      className="inline-block"
-                    >
-                      <Dropdown.Item key="Facebook">
-                        <div className="flex items-center space-x-4">
-                          <div>
-                            <FaFacebook />
-                          </div>{" "}
-                          <div>Facebook </div>
-                        </div>
-                      </Dropdown.Item>
-                      <Dropdown.Item key="Tiktok">
-                        <div className="flex items-center space-x-4">
-                          <div>
-                            <FaTiktok />
-                          </div>{" "}
-                          <div>Tiktok </div>
                         </div>{" "}
-                      </Dropdown.Item>
-                      <Dropdown.Item key="Instagram">
-                        <div className="flex items-center space-x-4">
-                          <div>
-                            <FaInstagram />
-                          </div>{" "}
-                          <div>Instagram </div>
-                        </div>
-                      </Dropdown.Item>
-                      <Dropdown.Item key="Twitter">
-                        <div className="flex items-center space-x-4">
-                          <div>
-                            <FaTwitter />
-                          </div>{" "}
-                          <div>Twitter </div>
-                        </div>
-                      </Dropdown.Item>
-                      <Dropdown.Item key="Youtube">
-                        <div className="flex items-center space-x-4">
-                          <div>
-                            <FaYoutube />
-                          </div>{" "}
-                          <div>Youtube </div>
-                        </div>
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </div>
+                        <div>Facebook </div>
+                      </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Tiktok" >
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaTiktok />
+                        </div>{" "}
+                        <div>Tiktok </div>
+                      </div>{" "}
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Instagram" >
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaInstagram />
+                        </div>{" "}
+                        <div>Instagram </div>
+                      </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Twitter" >
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaTwitter />
+                        </div>{" "}
+                        <div>Twitter </div>
+                      </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Youtube" >
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <FaYoutube />
+                        </div>{" "}
+                        <div>Youtube </div>
+                      </div>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+             </div>
                 <div>
-                  <input
-                    className="form-input w-full"
-                    name="from_SocialType"
-                    type="text"
-                    value={selectedValue}
-                    hidden="true"
-                    placeholder=""
-                    required
-                  />
-                  <input
-                    className="form-input w-full"
-                    name="from_SocialName"
-                    type="text"
-                    placeholder=""
-                    required
-                  />
+                <input
+                  className="form-input w-full"
+                  name="from_SocialType" 
+                  type="text"
+                  value={selectedValue} 
+                  hidden='true'
+                  placeholder=""
+                  required
+                />
+                <input
+                  className="form-input w-full"
+                  name="from_SocialName" 
+                  type="text"
+                  placeholder=""
+                  required
+                />
                 </div>
               </div>
               {/* 
