@@ -390,7 +390,7 @@ const Contact = ({ data }) => {
                     onSelectionChange={setSelected}
                     className="inline-block"
                   >
-                    <Dropdown.Item key="Facebook">
+                    <Dropdown.Item key="Facebook" name="from_Social">
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaFacebook />
@@ -398,7 +398,7 @@ const Contact = ({ data }) => {
                         <div>Facebook </div>
                       </div>
                     </Dropdown.Item>
-                    <Dropdown.Item key="Tiktok">
+                    <Dropdown.Item key="Tiktok" name="from_Social">
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaTiktok />
@@ -406,7 +406,7 @@ const Contact = ({ data }) => {
                         <div>Tiktok </div>
                       </div>{" "}
                     </Dropdown.Item>
-                    <Dropdown.Item key="Instagram">
+                    <Dropdown.Item key="Instagram" name="from_Social">
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaInstagram />
@@ -414,7 +414,7 @@ const Contact = ({ data }) => {
                         <div>Instagram </div>
                       </div>
                     </Dropdown.Item>
-                    <Dropdown.Item key="Twitter">
+                    <Dropdown.Item key="Twitter" name="from_Social">
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaTwitter />
@@ -422,7 +422,7 @@ const Contact = ({ data }) => {
                         <div>Twitter </div>
                       </div>
                     </Dropdown.Item>
-                    <Dropdown.Item key="Youtube">
+                    <Dropdown.Item key="Youtube" name="from_Social">
                       <div className="flex items-center space-x-4">
                         <div>
                           <FaYoutube />
@@ -442,7 +442,7 @@ const Contact = ({ data }) => {
                 <div>
                 <input
                   className="form-input w-full"
-                  name="from_social" 
+                  name="from_SocialName" 
                   type="text"
                   placeholder=""
                   required
