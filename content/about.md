@@ -1,9 +1,9 @@
 ---
 title: About Girls Content Hub
-video: /images/VideoTHHmp4.mp4
+video: /images/RamioExplaingGCHub.mp4
 description: "meta description"
 layout: about
-education:
+education: 
   title: Successful candidates
   degrees:
     - university: "Positive & Happy"

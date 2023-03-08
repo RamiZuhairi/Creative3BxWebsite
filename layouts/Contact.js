@@ -20,7 +20,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Dropdown } from "@nextui-org/react";
 
 const Contact = ({ data }) => {
-  const [selected, setSelected] = React.useState(new Set(["Facebook"]));
+  const [selected, setSelected] = React.useState(new Set(["Instagram"]));
 
   const selectedValue = React.useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
@@ -508,7 +508,7 @@ const Contact = ({ data }) => {
                         />
                       </svg>
                     </div>
-                    <div>Your Message Here </div>
+                    <div>Tell us a bit about yourself/Your message </div>
                     <div>
                       <small className="font-secondary text-sm text-red-500">
                         *
