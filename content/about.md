@@ -1,6 +1,6 @@
 ---
 title: About Girls Content Hub
-video: /images/RamioExplaingGCHub.mp4 
+video: /images/RamioGChubNew2.mp4
 description: "meta description"
 layout: about
 education: 
