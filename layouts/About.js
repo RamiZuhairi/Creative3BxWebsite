@@ -10,7 +10,7 @@ console.log("data About>>", data)
       <div className="container text-center">
         {video && (
           <div className="mb-8">
-            <video className="rounded-lg" controls>
+            <video width="100%"  className="rounded-lg" controls>
               {/* <source src="/video-example.webm" type="video/webm" /> */}
               <source src={video} type="video/mp4" />
               Sorry, your browser doesnt support videos.
