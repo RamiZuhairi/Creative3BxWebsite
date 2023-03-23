@@ -11,7 +11,7 @@ Girls Content Hub is an agency dedicated to empowering women by providing specia
 
 ## Meet Alyssa
 
-<video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" controls/>
+<video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" loop autoPlay controls/>
 
 ## Your benefits with Girls Content Hub ❤️
 

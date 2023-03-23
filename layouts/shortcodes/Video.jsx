@@ -5,6 +5,7 @@ function Video({ title, width = 500, height = "auto", src, ...rest }) {
       width={width}
       height={height}
       controls
+      loop autoPlay 
       {...rest}
     >
       <source

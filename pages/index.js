@@ -156,10 +156,10 @@ const Home = ({
                 </div>
               )}
              <div className="text-xl">Meet Alyssa </div>
-              <video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" controls/>
+              <video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" loop autoPlay  controls/>
               <br/>
               <div className="text-xl">Meet Natalia</div>
-              <video width="100%" className="rounded-lg" src="/images/GCH_NataliaLong.mp4" controls/>
+              <video width="100%" className="rounded-lg" src="/images/GCH_NataliaLong.mp4" loop autoPlay controls/>
               <br/>
 
               <Pagination
