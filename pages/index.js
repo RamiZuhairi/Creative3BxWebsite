@@ -11,6 +11,8 @@ import { sortByDate } from "@lib/utils/sortFunctions";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import { FaRegCalendar } from "react-icons/fa";
+import styles from "../styles/genralstyles.module.css";
+
 const { blog_folder, pagination } = config.settings;
 
 const Home = ({
@@ -43,18 +45,31 @@ const Home = ({
 
         <div className="container">
           <div className="row flex-wrap-reverse items-center justify-center lg:flex-row">
-            <div className="mt-12 text-center lg:mt-0 lg:text-left lg:col-6">
+            <div className="mt-12 text-center lg:col-6 lg:mt-0 lg:text-left">
               <div className="banner-title">
                 {markdownify(banner.title, "h1")}
                 {markdownify(banner.title_small, "span")}
               </div>
               {markdownify(banner.content, "p", "mt-4")}
+              {/* Contact us button */}
               <Link
-                className="btn btn-primary mt-6"
-                href={banner.button.link}
-                rel={banner.button.rel}
+                className="ml-10"
+                href={banner.contactButton.link}
+                rel={banner.contactButton.rel}
               >
-                {banner.button.label}
+                <button className={styles.contactusBtn}>
+                  {banner.contactButton.label}
+                  <span className={styles.arrow}>
+                    <svg
+                      fill="rgb(183, 128, 255)"
+                      viewBox="0 0 320 512"
+                      height="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                    </svg>
+                  </span>
+                </button>
               </Link>
             </div>
             <div className="col-9 lg:col-6">
@@ -75,17 +90,22 @@ const Home = ({
       <section className="section">
         <div className="container">
           <div className="row items-start">
-            <div className="mb-12 lg:mb-0 lg:col-8">
+            <div className="mb-12 lg:col-8 lg:mb-0">
               {/* Featured posts */}
               {featured_posts.enable && (
                 <div className="section">
                   {markdownify(featured_posts.title, "h2", "section-title")}
+                  {markdownify(
+                    featured_posts.subtitle,
+                    "h3",
+                    "sub-section-title"
+                  )}
                   <div className="rounded border border-border p-6 dark:border-darkmode-border">
                     <div className="row">
                       <div className="md:col-6">
                         <Post post={featuredPosts[0]} />
                       </div>
-                      <div className="scrollbar-w-[10px] mt-8 max-h-[480px] scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-border dark:scrollbar-track-gray-800 dark:scrollbar-thumb-darkmode-theme-dark md:mt-0 md:col-6">
+                      <div className="scrollbar-w-[10px] mt-8 max-h-[480px] scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-border md:col-6 dark:scrollbar-track-gray-800 dark:scrollbar-thumb-darkmode-theme-dark md:mt-0">
                         {featuredPosts
                           .slice(1, featuredPosts.length)
                           .map((post, i, arr) => (
@@ -155,12 +175,34 @@ const Home = ({
                   </div>
                 </div>
               )}
-             <div className="text-xl">Meet Alyssa </div>
-              <video width="100%" className="rounded-lg" src="/images/postsImgs/Alyssa-ContactUsExperinceMp4.mp4" loop autoPlay  controls/>
-              <br/>
-              <div className="text-xl">Meet Natalia</div>
-              <video width="100%" className="rounded-lg" src="/images/GCH_NataliaLong.mp4" loop autoPlay controls/>
-              <br/>
+              {/* Our Services button */}
+              <Link
+                className="ml-10"
+                href={banner.servicesButton.link}
+                rel={banner.servicesButton.rel}
+              >
+                <button className={styles.contactusBtn}>
+                  {banner.servicesButton.label}
+                  <span className={styles.arrow}>
+                    <svg
+                      fill="rgb(183, 128, 255)"
+                      viewBox="0 0 320 512"
+                      height="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                    </svg>
+                  </span>
+                </button>
+              </Link>
+              <br />
+              <video
+                width="100%"
+                className="rounded-lg"
+                src="/images/Creative3BxITServices1.mp4"
+                controls
+              />
+              <br />
 
               <Pagination
                 totalPages={Math.ceil(posts.length / showPosts)}

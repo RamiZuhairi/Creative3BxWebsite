@@ -25,7 +25,7 @@ const Categories = ({ categories }) => {
               >
                 <Link
                   href={`/categories/${category.name}`}
-                  className="flex w-full items-center justify-center rounded-lg bg-theme-light px-4 py-4 font-bold text-dark transition hover:bg-red-900 hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-primary dark:hover:text-white"
+                  className="flex w-full items-center justify-center rounded-lg bg-theme-light px-4 py-4 font-bold text-dark transition hover:bg-red-900 hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-red-900 dark:hover:text-white"
                 >
                   <FaFolder className="mr-1.5" />
                   {humanize(category.name)} ({category.posts})

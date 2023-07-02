@@ -1,25 +1,31 @@
 ---
 banner:
   title: Welcome **!**
-  title_small: "Girls Content Hub"
-  content: Girls Content Hub team is focused on helping individuals earn extra income through their efforts and hard work. The team's positive and supportive approach is designed to provide the resources and support necessary to help individuals reach their financial goals.
-  image: /images/THEHOTHOUSEAnimate.gif
-  button:
+  title_small: "Creative3Bx IT Services"
+  content: Discover a new dimension of digital growth with Creative3Bx IT Services. We are the maestros in breaking business barriers, using state-of-the-art technology to transform your challenges into opportunities.Our bespoke solutions cater to your unique needs, ensuring your transition to online triumph is smooth and efficient. Partner with Creative3Bx for your IT requirements, and witness the transformative impact we can have on your online business journey.
+
+  image: /images/confidentBusinessMan1.svg
+  contactButton:
     label: Contact us
     link: /contact
+    rel: ""
+  servicesButton:
+    label: Our Services
+    link: /services
     rel: ""
 
 featured_posts:
   enable: true
-  title: GCHub Rising Stars
+  title: Your Business Growth 🌱 (Essential Reads)
+  subtitle: 
 
 promotion:
   enable: true
-  image: /images/promotion.gif
+  image: /images/promotion1.gif
   link: "#"
 
 recent_posts:
-  title: GCHub Tips & Tricks
+  title: CreativeBz Recent Posts
   enable: false
 
 ---

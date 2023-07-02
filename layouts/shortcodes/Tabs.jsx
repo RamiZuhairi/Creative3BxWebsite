@@ -29,15 +29,59 @@ function Tabs({ children }) {
     <div className="relative">
       <ul className="mb-0 flex list-none items-center space-x-4 pl-0">
         {children.map((item, index) => (
-          <li
-            key={index}
-            className={` m-0 cursor-pointer rounded px-8 py-3 font-bold  text-dark dark:text-darkmode-light ${
-              index === 0 && "active-tab"
-            }`}
-            onClick={(e) => handleChangTab(e, index)}
-          >
-            {item.props.name}
-          </li>
+     <li
+     key={index}
+     className={`m-0 cursor-pointer rounded px-8 py-3 font-bold text-dark dark:text-darkmode-light ${
+       index === 0 && "active-tab"
+     }`}
+     onClick={(e) => handleChangTab(e, index)}
+   >
+     {index === 0 && (
+       <div className="flex items-center">
+         <div className="mr-2 text-3xl">
+           ⭐
+         </div>
+         <div>{item.props.name}</div>
+       </div>
+     )}
+     {index === 1 && (
+       <div className="flex items-center">
+         <div className="mr-2 text-3xl">
+           🖥️
+         </div>
+         <div>{item.props.name}</div>
+       </div>
+     )}
+     {index === 2 && (
+       <div className="flex items-center">
+         <div className="mr-2 text-3xl">
+           🧰
+         </div>
+         <div>{item.props.name}</div>
+       </div>
+     )}
+     {index === 3 && (
+       <div className="flex items-center">
+         <div className="mr-2 text-3xl">
+           📊
+         </div>
+         <div>{item.props.name}</div>
+       </div>
+     )}
+     {index === 4 && (
+       <div className="flex items-center">
+         <div className="mr-2 text-3xl">
+           🌍
+         </div>
+         <div>{item.props.name}</div>
+       </div>
+     )}
+     {/* Add more conditions for other tabs */}
+     {index !== 0 && index !== 1 && index !== 2 && index !== 3 && index !== 4 && (
+       <div>{item.props.name}</div>
+     )}
+   </li>
+   
         ))}
       </ul>
       <ul

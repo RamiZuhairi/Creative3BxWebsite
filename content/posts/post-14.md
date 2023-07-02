@@ -2,7 +2,7 @@
 title: "Proven Ways to Get More Likes, Views, and Subscribers"
 date: 2023-01-04T05:00:00Z
 image: /images/postsImgs/post14MoreLikes1.gif
-categories: ["robotics", "youtube"]
+categories: ["Social Media Marketing", "youtube"]
 featured: false
 draft: false
 ---
@@ -31,6 +31,6 @@ As human beings, we have the ability to spread our emotions to others. When we a
 - Stay on top of trends and topics related to your niche
 
 ![alter-text](/images/postsImgs/post14MoreLikes2.gif)
-*Conclusion*
 
-Getting more likes, views, and subscribers takes time and effort, but implementing these proven ways can help you grow your audience and increase your reach. By creating high-quality content, staying consistent, promoting your content, optimizing for SEO, running contests, analyzing your data, and never giving up, you can build a loyal following and achieve your content goals.
+
+> Getting more likes, views, and subscribers takes time and effort, but implementing these proven ways can help you grow your audience and increase your reach. By creating high-quality content, staying consistent, promoting your content, optimizing for SEO, running contests, analyzing your data, and never giving up, you can build a loyal following and achieve your content goals.

@@ -8,7 +8,12 @@ import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 
 const Footer = () => {
-  const { copyright, footer_content } = config.params;
+  const { copyrightCompanyName, footer_content } = config.params;
+  // Get the current year
+  var currentYear = new Date().getFullYear();
+
+  // Generate the copyright notice
+  var copyrightNotice = "Copyright © " + currentYear + " " + copyrightCompanyName;
   return (
     <footer className="section relative mt-12 pt-[70px] pb-[50px]">
       <ImageFallback
@@ -17,7 +22,9 @@ const Footer = () => {
         alt="footer background"
         fill={true}
       />
-      <div className="container text-center">
+      <div className="container text-center"
+      // style={{ zIndex: "-1", position: "relative" }}
+      >
         <div className="mb-6 inline-flex">
           <Logo />
         </div>
@@ -41,7 +48,8 @@ const Footer = () => {
           <Social source={social} className="socials mb-12 justify-center" />
         </div>
         {/* copyright */}
-        {markdownify(copyright, "p")}
+        
+        {markdownify(copyrightNotice, "p")}
       </div>
     </footer>
   );

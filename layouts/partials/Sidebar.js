@@ -25,7 +25,9 @@ const Sidebar = ({ posts, categories, className }) => {
   return (
     <aside className={`${className} px-0 lg:px-6 lg:col-4`}>
       {about.enable && (
-        <div className="relative rounded border border-border p-6 text-center dark:border-darkmode-border">
+        <div className="relative rounded border border-border p-6 text-center dark:border-darkmode-border"
+        // style={{ zIndex: "-1", position: "relative" }}
+        >
           <ImageFallback
             className="-z-[1]"
             src="/images/map.svg"
@@ -87,7 +89,9 @@ const Sidebar = ({ posts, categories, className }) => {
 
       {/* featured widget */}
       {featured_posts.enable && (
-        <div className="mt-6 rounded border border-border p-6 dark:border-darkmode-border">
+        <div className="mt-6 rounded border border-border p-6 dark:border-darkmode-border"
+        // style={{ zIndex: "-1", position: "relative" }}
+        >
           <h4 className="section-title mb-12 text-center">Featured</h4>
           <div className="mb-12 flex items-center justify-center">
             <button
@@ -187,7 +191,7 @@ const Sidebar = ({ posts, categories, className }) => {
           <h4 className="section-title">{newsletter.title}</h4>
           <p className="mt-10 text-xs">{newsletter.content}</p>
           <MailchimpSubscribe
-            url={newsletter.malichip_url}
+            url={newsletter.malichipm_url}
             render={({ subscribe, status, message }) => (
               <CustomForm
                 onValidated={(formData) => subscribe(formData)}
@@ -200,7 +204,7 @@ const Sidebar = ({ posts, categories, className }) => {
             By Singing Up, You Agree To
             <Link
               href={newsletter.privacy_policy_page}
-              className="ml-1 text-red-900"
+              className="ml-1 text-red-700"
             >
               Privacy Policy
             </Link>

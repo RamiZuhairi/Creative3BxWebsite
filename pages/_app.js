@@ -1,11 +1,23 @@
-import config from "@config/config.json";
-import theme from "@config/theme.json";
-import { JsonContext } from "context/state";
+import React from "react";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
+import { ContextProvider } from "../context";
+import config from "@config/config.json";
+import theme from "@config/theme.json";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import "styles/style.scss";
+import "../components/index.css";
+import "../styles/auth.css";
+import "../styles/chats.css";
+import "../styles/auth.css";
+import { JsonContext } from "context/state";
+
+//import chatEngine components
+import SupportEngine from "components/SupportEngine";
+// Import Router for loading Icon
+import Router from "next/router";
+import Loader from "@layouts/components/Loader";
 
 const App = ({ Component, pageProps }) => {
   // default theme setup
@@ -35,9 +47,20 @@ const App = ({ Component, pageProps }) => {
     }, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  // Routing and loading Icon
+  const [loading , setLoading] = useState(false)
+  Router.events.on("routeChangeStart", (url)=>{
+    setLoading(true);
+  })
+  Router.events.on("routeChangeComplete", (url)=>{
+    setLoading(false);
+  })
   return (
+    <>
     <JsonContext>
+    {loading && <Loader/>}
+    <ContextProvider>
+      
       <Head>
         {/* google font css */}
         <link
@@ -59,7 +82,10 @@ const App = ({ Component, pageProps }) => {
       <ThemeProvider attribute="class" defaultTheme={default_theme}>
         <Component {...pageProps} />
       </ThemeProvider>
+      <SupportEngine/>
+    </ContextProvider>
     </JsonContext>
+    </>
   );
 };
 

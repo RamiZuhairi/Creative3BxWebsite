@@ -19,19 +19,27 @@ function CustomForm({ status, message, onValidated }) {
       <form action="#" className="py-6" onSubmit={handleSubmit}>
         <fieldset className="relative">
           <input
-            className="newsletter-input form-input h-12 w-full rounded-3xl border-none bg-theme-light px-5 py-3 pr-12 text-dark placeholder:text-xs dark:bg-darkmode-theme-dark"
+            // style={{ zIndex: "-1", position: "relative" }}
+            className="newsletter-input form-input h-12 w-full rounded-3xl border-none bg-theme-light px-5 py-3 pr-12 text-dark placeholder:text-xs dark:bg-darkmode-theme-dark "
             type="text"
-            placeholder="Type And Hit Enter"
+            placeholder="Enter Your Email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <FaEnvelope className="absolute top-1/2 right-5 -translate-y-1/2 text-xl transition duration-75" />
+          <FaEnvelope
+            className="absolute right-5 top-1/2 -translate-y-1/2 text-xl transition duration-75"
+            style={{ zIndex: "-1" }}
+          />
         </fieldset>
-        <button className="d-block  btn btn-primary mt-4 w-full" type="submit">
+        <button
+          // style={{ zIndex: "-1" }}
+          className="d-block  btn btn-primary mt-4 w-full"
+          type="submit"
+        >
           Sign In
         </button>
       </form>
       {status === "sending" && (
-        <div className="mt-4 text-red-900">sending...</div>
+        <div className="mt-4 text-red-700">sending...</div>
       )}
       {status === "error" && (
         <div

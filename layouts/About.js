@@ -8,21 +8,20 @@ console.log("data About>>", data)
   return (
     <section className="section mt-16">
       <div className="container text-center">
-        {video && (
-          <div className="mb-8">
-            <video width="100%"  className="rounded-lg" loop autoPlay  controls>
-              {/* <source src="/video-example.webm" type="video/webm" /> */}
-              <source src={video} type="video/mp4" />
-              Sorry, your browser doesnt support videos.
-            </video>
-          </div>
-        )}
+       
         {markdownify(title, "h1", "h1 text-left lg:text-[55px] mt-12")}
 
         <div className="content text-left">
           <MDXRemote {...mdxContent} components={shortcodes} />
         </div>
-
+        {video && (
+          <div className="mb-8">
+            <video width="100%"  className="rounded-lg" loop autoPlay  controls>
+              <source src={video} type="video/mp4" />
+              Sorry, your browser doesnt support videos.
+            </video>
+          </div>
+        )}
         <div className="row mt-24 text-left lg:flex-nowrap">
           <div className="lg:col-6 ">
             <div className="rounded border border-border p-6 dark:border-darkmode-border ">

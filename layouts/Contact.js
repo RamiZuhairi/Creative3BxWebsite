@@ -1,27 +1,17 @@
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs";
-import {
-  FaFacebook,
-  FaTiktok,
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-  FaUserAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaUserAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import ImageFallback from "./components/ImageFallback";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 //import  useState from "react"
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Dropdown } from "@nextui-org/react";
 
 const Contact = ({ data }) => {
   const [selected, setSelected] = React.useState(new Set(["Instagram"]));
-
+  const [sendButtonHovered, setSendButtonHovered] = useState(false);
   const selectedValue = React.useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
     [selected]
@@ -35,12 +25,12 @@ const Contact = ({ data }) => {
     Swal.fire({
       title: "<h3 style='color:#0e0e0e'>" + "Sweet!" + "</h3>",
       icon: "success",
-      text: "Thank you for submitting your application the Girls Contnet Hub team will contact you shortly",
+      text: "Thank you for reaching out to us! Our Auto Review Booster team will be in touch with you shortly.",
       imageUrl: "./images/ThanksMessage.gif",
       imageWidth: 300,
       imageHeight: 300,
       imageAlt: "Custom image",
-      timer: 4500,
+      timer: 8000,
       iconposition: "buttom",
     });
   };
@@ -72,33 +62,6 @@ const Contact = ({ data }) => {
       },
     });
   };
-
-  //Upload file UploadPicture
-  ////To uploading a photo be added later 
-  // async function UploadPicture() {
-  //   const { value: file } = await Swal.fire({
-  //     title: "Select image",
-  //     input: "file",
-  //     inputAttributes: {
-  //       accept: "image/*",
-  //       "aria-label": "Upload your profile picture",
-  //     },
-  //   });
-
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onload = (e) => {
-  //       Swal.fire({
-  //         title:
-  //           "<h3 style='color:#0e0e0e'>" + "Your uploaded picture" + "</h3>",
-  //         imageUrl: e.target.result,
-  //         imageAlt: "The uploaded picture",
-  //       });
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // }
-
   //Google Recapcha
   const onChange = () => {
     GoogleCapcha = true;
@@ -109,10 +72,10 @@ const Contact = ({ data }) => {
       // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
       emailjs
         .sendForm(
-          "service_0ybp1pk",
-          "template_iagf9jh",
+          process.env.NEXT_PUBLIC_CE_Emailjs_SERVICE_ID,
+          process.env.NEXT_PUBLIC_CE_Emailjs_TEMPLATE_ID,
           form.current,
-          "rQEQEUHnfqbKrneGy"
+          process.env.NEXT_PUBLIC_CE_Emailjs_PUBLIC_KEY
         )
         .then(
           (result) => {
@@ -150,7 +113,7 @@ const Contact = ({ data }) => {
             )}
             <p>{paragrph}</p>
           </div>
-          <div className="contact-form-wrapper rounded border border-border p-6 dark:border-darkmode-border lg:col-6">
+          <div className="contact-form-wrapper rounded border border-border p-6 lg:col-6 dark:border-darkmode-border">
             <h2>
               Send Us A
               <span className="text-red ml-1.5 inline-flex  items-center text-red-500">
@@ -182,7 +145,7 @@ const Contact = ({ data }) => {
                         />
                       </svg>
                     </div>
-                    <div>Full name</div>
+                    <div>Your Name</div>
                     <div>
                       <small className="font-secondary text-sm text-red-500">
                         *
@@ -270,32 +233,7 @@ const Contact = ({ data }) => {
                 />
               </div>
               <div className="mb-6">
-                <div className="space-x-5">
-                  <input
-                    className="px-2"
-                    type="radio"
-                    value="Male"
-                    name="from_gender"
-                  />{" "}
-                  Male
-                  <input
-                    className="px-2"
-                    type="radio"
-                    value="Female"
-                    name="from_gender"
-                  />{" "}
-                  Female
-                  <input
-                    className="px-2"
-                    type="radio"
-                    value="Other"
-                    name="from_gender"
-                  />{" "}
-                  Other
-                </div>
-              </div>
-              <div className="mb-6">
-                <label className="mb-2 block font-secondary" htmlFor="email">
+                <label className="mb-2 block font-secondary" htmlFor="name">
                   <div className="flex space-x-1">
                     <div>
                       <svg
@@ -309,24 +247,18 @@ const Contact = ({ data }) => {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
                     </div>
-                    <div>Age</div>
-                    <div>
-                      <small className="font-secondary text-sm text-red-500">
-                        *
-                      </small>
-                    </div>
+                    <div>Business Name (if applicable, please provide):</div>
                   </div>
                 </label>
                 <input
                   className="form-input w-full"
-                  name="from_age"
-                  type="number"
+                  name="from_name"
+                  type="text"
                   placeholder=""
-                  required
                 />
               </div>
               <div className="mb-6">
@@ -353,11 +285,8 @@ const Contact = ({ data }) => {
                         />
                       </svg>
                     </div>
-                    <div>Country</div>
                     <div>
-                      <small className="font-secondary text-sm text-red-500">
-                        *
-                      </small>
+                      Business Address (if applicable, please provide):{" "}
                     </div>
                   </div>
                 </label>
@@ -366,127 +295,6 @@ const Contact = ({ data }) => {
                   name="from_country"
                   type="text"
                   placeholder=""
-                  required
-                />
-              </div>
-              <div className="mb-8 flex space-x-2">
-              <div> Please share a social media account name </div>
-                <div>
-                  <small className="font-secondary text-sm text-red-500">
-                    *
-                  </small>
-                </div>
-                </div>
-              <div className="mb-8 flex items-center space-x-4">
-                <div>
-                <Dropdown>
-                  <Dropdown.Button
-                    flat
-                    color="secondary"
-                    css={{ tt: "capitalize" }}
-                    
-                  >
-                    
-                  {selectedValue ==='Facebook'&& <div className="px-2"><FaFacebook/></div> }
-                  {selectedValue ==='Tiktok'&& <div className="px-2"> <FaTiktok/></div> } 
-                  {selectedValue ==='Instagram'&& <div className="px-2"> <FaInstagram/></div> } 
-                  {selectedValue ==='Twitter'&& <div className="px-2"> <FaTwitter/></div> } 
-                  {selectedValue ==='Youtube'&& <div className="px-2"> <FaYoutube/></div> } 
-                  {selectedValue}
-                  </Dropdown.Button>
-                  <Dropdown.Menu
-                    aria-label="Single selection actions"
-                    color="secondary"
-                    disallowEmptySelection
-                    selectionMode="single"
-                    selectedKeys={selected}
-                    onSelectionChange={setSelected}
-                    className="inline-block"
-                  >
-                    <Dropdown.Item key="Facebook">
-                      <div className="flex items-center space-x-4">
-                        <div>
-                          <FaFacebook />
-                        </div>{" "}
-                        <div>Facebook </div>
-                      </div>
-                    </Dropdown.Item>
-                    <Dropdown.Item key="Tiktok" >
-                      <div className="flex items-center space-x-4">
-                        <div>
-                          <FaTiktok />
-                        </div>{" "}
-                        <div>Tiktok </div>
-                      </div>{" "}
-                    </Dropdown.Item>
-                    <Dropdown.Item key="Instagram" >
-                      <div className="flex items-center space-x-4">
-                        <div>
-                          <FaInstagram />
-                        </div>{" "}
-                        <div>Instagram </div>
-                      </div>
-                    </Dropdown.Item>
-                    <Dropdown.Item key="Twitter" >
-                      <div className="flex items-center space-x-4">
-                        <div>
-                          <FaTwitter />
-                        </div>{" "}
-                        <div>Twitter </div>
-                      </div>
-                    </Dropdown.Item>
-                    <Dropdown.Item key="Youtube" >
-                      <div className="flex items-center space-x-4">
-                        <div>
-                          <FaYoutube />
-                        </div>{" "}
-                        <div>Youtube </div>
-                      </div>
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-             </div>
-                <div>
-                <input
-                  className="form-input w-full"
-                  name="from_SocialType" 
-                  type="text"
-                  value={selectedValue} 
-                  hidden='true'
-                  placeholder=""
-                  required
-                />
-                <input
-                  className="form-input w-full"
-                  name="from_SocialName" 
-                  type="text"
-                  placeholder=""
-                  required
-                />
-                </div>
-              </div>
-              {/* 
-              //To uploading a photo be added later 
-              <div className="mb-6">
-                <button type="button" onClick={UploadPicture}>
-                  Upload
-                </button>
-                <div>File uploaded</div>
-                <input type="file" />
-              </div> */}
-              <div className="mb-6">
-                <label className="mb-2 block font-secondary" htmlFor="subject">
-                  Subject
-                  <small className="font-secondary text-sm text-red-500">
-                    *
-                  </small>
-                </label>
-                <input
-                  className="form-input w-full"
-                  name="from_subject"
-                  type="text"
-                  placeholder=""
-                  required
                 />
               </div>
               <div className="mb-6">
@@ -508,7 +316,7 @@ const Contact = ({ data }) => {
                         />
                       </svg>
                     </div>
-                    <div>Tell us a bit about yourself/Your message </div>
+                    <div>How can we assist you? </div>
                     <div>
                       <small className="font-secondary text-sm text-red-500">
                         *
@@ -520,6 +328,7 @@ const Contact = ({ data }) => {
                   name="message"
                   className="form-textarea w-full"
                   placeholder=""
+                  required
                   rows="7"
                 />
               </div>
@@ -530,10 +339,14 @@ const Contact = ({ data }) => {
                 />
               </div>
 
-              <input className="btn btn-primary" type="submit" value="Send" />
+              <input
+              onMouseEnter={() => setSendButtonHovered(true)}
+              onMouseLeave={() => setSendButtonHovered(false)}
+              style={{background: sendButtonHovered ? "#be232f" : "#7f1d1d"}}
+              className="btn btn-primary" type="submit" value="Send" />
             </form>
-            {/* <input className="btn btn-primary" type="submit" value="Send" onClick={AlertSuccess} />
-            <input className="btn btn-primary" type="submit" value="Send Fail" onClick={AlertFail} /> */}
+            {/*
+             */}
           </div>
         </div>
         <div className="row">
